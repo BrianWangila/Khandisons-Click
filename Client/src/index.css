@@ -62,8 +62,7 @@ tbody td {
   color: rgb(36, 26, 26);
 }
 
-tbody td button {
-  color: red;
+tbody  button {
   font-size: 15px;
   margin-left: 1vw;
   border: none;

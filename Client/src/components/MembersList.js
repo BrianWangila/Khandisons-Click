@@ -40,18 +40,18 @@ function MembersList( { members, onDeleteMember } ) {
 
         {members.map((member) => {
           return (
-          <tbody className='table'>
-            <tr>
+          <tbody>
+            <tr key={member.id} id={member.id}>
               <td>{member.first_name}</td>
               <td>{member.last_name}</td>
               <td>{member.position}</td>
               <td>{member.email}</td>
-              <td><button onClick={handleDeleteClick}>🗑</button></td>
-              <td><button onClick={handleDeleteClick}>✏️</button></td>
+              
+              <button onClick={handleDeleteClick}>🗑</button><button onClick={handleUpdateClick}>✏️</button>
             </tr>
-
-          </tbody>
+          </tbody>  
           )})}
+
         </table>
     </div>
 
