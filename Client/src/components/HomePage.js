@@ -35,6 +35,13 @@ import MembersList from "./MembersList";
     return member
   })
 
+  const handleUpdateMember = (updatedMember) => {
+    const updateMember = members.map((member) => {
+      return member.id === updatedMember.id ? updatedMember : member
+    })
+    setMembers(updateMember)
+  }
+
    return (
       <div>
 
@@ -46,6 +53,7 @@ import MembersList from "./MembersList";
           <MembersList 
             members={handleDisplayMembers}
             onDeleteMember={handleDelete}
+            onUpdateMember={handleUpdateMember}
           />
         </div>
 

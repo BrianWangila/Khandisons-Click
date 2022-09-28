@@ -3,8 +3,8 @@ import React from 'react'
 // import MemberCard from './MemberCard'
 
 
-function MembersList( { members, onDeleteMember } ) {
-  const { id, first_name, last_name, position, email, is_developer: isDeveloper } = members
+function MembersList( { members, onDeleteMember, onUpdateMember } ) {
+  const { id, first_name, last_name, position, email, is_vetted: isVetted } = members
 
 
   const handleDeleteClick = () => {
@@ -14,15 +14,19 @@ function MembersList( { members, onDeleteMember } ) {
     onDeleteMember(id)
   }
 
-  const handleUpdateClick = () => {
+  const handleUpdateVetting = () => {
     fetch(`http://localhost:4000/members/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type":"application/json"
       },
-      body: JSON.stringify()
+      body: JSON.stringify({is_vetted: !isVetted})
     })
+    .then((resp) => resp.json())
+    .then((updatedMember) => onUpdateMember(updatedMember))
   }
+
+  
 
 
   return (
@@ -33,8 +37,9 @@ function MembersList( { members, onDeleteMember } ) {
             <tr>
               <th>First Name</th>
               <th>Last Name</th>
-              <th>Position</th>
               <th>Email Address</th>
+              <th>Position</th>
+              <th>Vetted</th>
             </tr>
           </thead>
 
@@ -44,10 +49,16 @@ function MembersList( { members, onDeleteMember } ) {
             <tr key={member.id} id={member.id}>
               <td>{member.first_name}</td>
               <td>{member.last_name}</td>
-              <td>{member.position}</td>
               <td>{member.email}</td>
-              
-              <button onClick={handleDeleteClick}>🗑</button><button onClick={handleUpdateClick}>✏️</button>
+              <td>{member.position}</td>
+              <td>{isVetted ? (
+                <button onClick={handleUpdateVetting}>Passed</button>
+              ):(
+                <button onClick={handleUpdateVetting}>Failed</button>
+              )}</td>
+             
+
+              <button onClick={handleDeleteClick}>🗑</button> {/*<button onClick={handleUpdateClick}>✏️</button>*/}
             </tr>
           </tbody>  
           )})}

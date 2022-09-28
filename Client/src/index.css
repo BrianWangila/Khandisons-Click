@@ -21,7 +21,7 @@ code {
 
 .app {
   margin-top: 10vh;
-  border: solid 1px;
+  border: solid 2px;
   padding: 20px;
 }
 
@@ -40,7 +40,7 @@ code {
   
 table {
   border: 2px solid forestgreen;
-  width: 70vw;
+  width: 80vw;
   min-height: 30vh;
 }
 
