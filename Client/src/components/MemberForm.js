@@ -35,23 +35,21 @@ function Form( { handleClose, onAddMember } ) {
     console.log(firstName, lastName, email, position);
 
     const addMember = {
-      firstName: firstName,
-      lastName: lastName,
+      first_name: firstName,
+      last_name: lastName,
       email: email,
       position: position
     }
 
-    onAddMember(addMember)
-
-    // fetch("/", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json"
-    //   },
-    //   body: JSON.stringify(addMember)
-    //   .then((resp) => resp.json())
-    //   .then((newMember) => newMember)
-    // })
+    fetch("http://localhost:4000/members", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(addMember)
+    })
+    .then((resp) => resp.json())
+    .then((newMember) => onAddMember(newMember))
 
     handleClose();
   }

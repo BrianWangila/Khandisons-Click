@@ -1,16 +1,21 @@
+import { ExpansionPanelActions } from '@material-ui/core'
 import React from 'react'
 import MemberCard from './MemberCard'
 
 
-function MembersList( { member } ) {
+function MembersList( { members } ) {
 
 
   return (
     <div>
       <ul className='membersArea'>
-        {/* <MemberCard
-          member={member}
-        /> */}
+      {members.map((member) => {
+        return (
+          <MemberCard
+            member={member}
+          />
+        )
+      })}
       </ul>
     </div>
   )
