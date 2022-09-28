@@ -12,9 +12,6 @@ function Header() {
         </h1>
       </div>
 
-      <div>
-
-      </div>
     </div>
   )
 }

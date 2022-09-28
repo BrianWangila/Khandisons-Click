@@ -36,19 +36,21 @@ import MembersList from "./MembersList";
   })
 
    return (
-      <div className="signUp">
-        <Button variant="contained" color="primary" onClick={handleOpen}>Add New Member</Button>
+      <div>
 
         <Dialog open={open} onClose={handleClose}>
           <MemberForm handleClose={handleClose} onAddMember={handleAddMember}/>
         </Dialog>
 
         <div>
-          <h3>Members of Khandison Click</h3>
           <MembersList 
             members={handleDisplayMembers}
             onDeleteMember={handleDelete}
           />
+        </div>
+
+        <div className="button">
+          <Button variant="contained" color="primary" onClick={handleOpen}>Add New Member</Button>
         </div>
       </div>
    )

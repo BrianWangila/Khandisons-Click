@@ -5,7 +5,7 @@ import HomePage from './HomePage';
 
 function App() {
   return (
-    <center>
+    <center className="app">
       <Header />
       <HomePage />
     </center>

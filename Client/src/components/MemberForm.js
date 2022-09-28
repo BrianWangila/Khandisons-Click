@@ -92,7 +92,7 @@ function Form( { handleClose, onAddMember } ) {
 
         <div>
           <Button variant="contained" onClick={handleClose}>Cancel</Button>
-          <Button type="submit" variant="contained">Signup</Button>
+          <Button type="submit" variant="contained">Add Member</Button>
         </div>
       </form>
   )
