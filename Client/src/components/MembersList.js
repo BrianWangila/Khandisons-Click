@@ -4,7 +4,7 @@ import React from 'react'
 
 
 function MembersList( { members, onDeleteMember, onUpdateMember } ) {
-  const { id, first_name, last_name, position, email, is_vetted: isVetted } = members
+  const { id, first_name, last_name, position, email, vetted: isVetted } = members
 
 
   const handleDeleteClick = () => {
@@ -20,13 +20,13 @@ function MembersList( { members, onDeleteMember, onUpdateMember } ) {
       headers: {
         "Content-Type":"application/json"
       },
-      body: JSON.stringify({is_vetted: !isVetted})
+      body: JSON.stringify({vetted: !isVetted})
     })
     .then((resp) => resp.json())
     .then((updatedMember) => onUpdateMember(updatedMember))
   }
 
-  
+
 
 
   return (
@@ -46,7 +46,8 @@ function MembersList( { members, onDeleteMember, onUpdateMember } ) {
         {members.map((member) => {
           return (
           <tbody>
-            <tr key={member.id} id={member.id}>
+            <tr key={member.id}>
+                
               <td>{member.first_name}</td>
               <td>{member.last_name}</td>
               <td>{member.email}</td>
