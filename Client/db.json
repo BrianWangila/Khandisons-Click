@@ -7,27 +7,6 @@
       "last_name": "Wangila",
       "email": "brian@gmail.com",
       "is_developer": true
-    },
-    {
-      "firstName": "Jay",
-      "lastName": "Swee",
-      "email": "jay@gmail.com",
-      "position": "Developer",
-      "id": 2
-    },
-    {
-      "firstName": "Mr",
-      "lastName": "Nice",
-      "email": "nice@gmail.com",
-      "position": "Member",
-      "id": 3
-    },
-    {
-      "first_name": "dfdf",
-      "last_name": "dfdfd",
-      "email": "fdf@gmail.com",
-      "position": "sdsd",
-      "id": 4
     }
   ]
 }

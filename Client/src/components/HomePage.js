@@ -26,6 +26,11 @@ import MembersList from "./MembersList";
     setMembers([...members, newMember])
   }
 
+  const handleDelete = (id) => {
+    const updatedList = members.filter((member) => member.id !== id)
+    setMembers(updatedList)
+  }
+
   const handleDisplayMembers = members.filter((member) => {
     return member
   })
@@ -40,7 +45,10 @@ import MembersList from "./MembersList";
 
         <div>
           <h3>Members of Khandison Click</h3>
-          <MembersList members={handleDisplayMembers}/>
+          <MembersList 
+            members={handleDisplayMembers}
+            onDeleteMember={handleDelete}
+          />
         </div>
       </div>
    )

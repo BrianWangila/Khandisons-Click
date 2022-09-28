@@ -3,7 +3,7 @@ import React from 'react'
 import MemberCard from './MemberCard'
 
 
-function MembersList( { members } ) {
+function MembersList( { members, onDeleteMember } ) {
 
 
   return (
@@ -13,6 +13,7 @@ function MembersList( { members } ) {
         return (
           <MemberCard
             member={member}
+            onDeleteMember={onDeleteMember}
           />
         )
       })}
