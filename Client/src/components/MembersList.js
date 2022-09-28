@@ -8,9 +8,9 @@ function MembersList( { member } ) {
   return (
     <div>
       <ul className='membersArea'>
-        <MemberCard
+        {/* <MemberCard
           member={member}
-        />
+        /> */}
       </ul>
     </div>
   )

@@ -21,11 +21,11 @@ import MembersList from "./MembersList";
         <Button variant="contained" color="primary" onClick={handleOpen}>Add New Member</Button>
 
         <Dialog open={open} onClose={handleClose}>
-          <MemberForm handleClose={handleClose}/>
+          <MemberForm handleClose={handleClose} handleSubmitForm={onAddM}/>
         </Dialog>
 
         <div>
-          <h3>Members in Khandison Click</h3>
+          <h3>Members of Khandison Click</h3>
           <MembersList />
         </div>
       </div>
