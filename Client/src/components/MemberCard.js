@@ -2,12 +2,12 @@ import React from 'react'
 
 
 
-function MemberCard({ member, onDeleteMember }) {
-  const { id, first_name, last_name, position, email, is_developer: isDeveloper } = member
+function MemberCard({ id, first_name, last_name, position, email, is_vetted: isVetted, onDeleteMember }) {
+  // const { id, first_name, last_name, position, email, is_vetted: isVetted } = member
 
 
   const handleUpdateClick = () => {
-    fetch(`http://localhost:4000/members/${id}`, {
+    fetch(`http://localhost:9292/members/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type":"application/json"
@@ -18,15 +18,17 @@ function MemberCard({ member, onDeleteMember }) {
 
   return (
     <div>
-      <div className= "card card2 col-sm-6" style={{width: 18+"rem", margin: 2+"rem"}}>
-        <div className="card-body">
-          {isDeveloper ? (
-            <button>FrontEnd</button>
+
+          <td>{first_name}</td>
+          <td>{last_name}</td>
+          <td>{position}</td>
+          <td>{email}</td>
+          {isVetted ? (
+            <button>Pass</button>
           ):(
-            <button>BackEnd</button>
+            <button>Fail</button>
           )} 
-        </div>
-      </div> 
+
     </div>
   )
 }

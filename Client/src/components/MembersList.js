@@ -4,18 +4,18 @@ import React from 'react'
 
 
 function MembersList( { members, onDeleteMember, onUpdateMember } ) {
-  const { id, first_name, last_name, position, email, vetted: isVetted } = members
+  const { id, vetted: isVetted } = members
 
 
   const handleDeleteClick = () => {
-    fetch(`http://localhost:4000/members/${id}`, {
+    fetch(`http://localhost:9292/members/${id}`, {
       method: "DELETE"
     })
     onDeleteMember(id)
   }
 
   const handleUpdateVetting = () => {
-    fetch(`http://localhost:4000/members/${id}`, {
+    fetch(`http://localhost:9292/members/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type":"application/json"
@@ -47,12 +47,12 @@ function MembersList( { members, onDeleteMember, onUpdateMember } ) {
           return (
           <tbody>
             <tr key={member.id}>
-                
-              <td>{member.first_name}</td>
-              <td>{member.last_name}</td>
+                {console.log(id)}
+              <td>{member.firstName}</td>
+              <td>{member.lastName}</td>
               <td>{member.email}</td>
               <td>{member.position}</td>
-              <td>{isVetted ? (
+              <td>{!isVetted ? (
                 <button onClick={handleUpdateVetting}>Passed</button>
               ):(
                 <button onClick={handleUpdateVetting}>Failed</button>

@@ -9,7 +9,7 @@ import MembersList from "./MembersList";
   const [members, setMembers] = useState([])
 
   useEffect(() => {
-    fetch("http://localhost:4000/members")
+    fetch("http://localhost:9292/members")
     .then((resp) => resp.json())
     .then((data) => setMembers(data))
   }, [])
@@ -50,7 +50,7 @@ import MembersList from "./MembersList";
         </Dialog>
 
         <div>
-          <MembersList 
+          <MembersList
             members={handleDisplayMembers}
             onDeleteMember={handleDelete}
             onUpdateMember={handleUpdateMember}
