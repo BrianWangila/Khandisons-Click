@@ -47,7 +47,7 @@ function MembersList( { members, onDeleteMember, onUpdateMember } ) {
           return (
           <tbody>
             <tr key={member.id}>
-                {console.log(id)}
+              
               <td>{member.firstName}</td>
               <td>{member.lastName}</td>
               <td>{member.email}</td>
