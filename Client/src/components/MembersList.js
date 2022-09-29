@@ -1,37 +1,38 @@
 import { ExpansionPanelActions } from '@material-ui/core'
 import React from 'react'
-// import MemberCard from './MemberCard'
+import MemberCard from './MemberCard'
+
 
 
 function MembersList( { members, onDeleteMember, onUpdateMember } ) {
   const { id, vetted: isVetted } = members
 
+console.log(members)
+  // const handleDeleteClick = () => {
+  //   fetch(`http://localhost:9292/members/${id}`, {
+  //     method: "DELETE"
+  //   })
+  //   onDeleteMember(id)
+  // }
 
-  const handleDeleteClick = () => {
-    fetch(`http://localhost:9292/members/${id}`, {
-      method: "DELETE"
-    })
-    onDeleteMember(id)
-  }
-
-  const handleUpdateVetting = () => {
-    fetch(`http://localhost:9292/members/${id}`, {
-      method: "PATCH",
-      headers: {
-        "Content-Type":"application/json"
-      },
-      body: JSON.stringify({vetted: !isVetted})
-    })
-    .then((resp) => resp.json())
-    .then((updatedMember) => onUpdateMember(updatedMember))
-  }
+  // const handleUpdateVetting = () => {
+  //   fetch(`http://localhost:9292/members/${id}`, {
+  //     method: "PATCH",
+  //     headers: {
+  //       "Content-Type":"application/json"
+  //     },
+  //     body: JSON.stringify({vetted: !isVetted})
+  //   })
+  //   .then((resp) => resp.json())
+  //   .then((updatedMember) => onUpdateMember(updatedMember))
+  // }
 
 
 
 
   return (
     <div>   
-      <div className='table-high'>
+      {/* <div className='table-high'>
         <table> 
           <thead>
             <tr>
@@ -41,31 +42,43 @@ function MembersList( { members, onDeleteMember, onUpdateMember } ) {
               <th>Position</th>
               <th>Vetted</th>
             </tr>
-          </thead>
+          </thead> */}
 
         {members.map((member) => {
+          
           return (
-          <tbody>
-            <tr key={member.id}>
-              
-              <td>{member.firstName}</td>
-              <td>{member.lastName}</td>
-              <td>{member.email}</td>
-              <td>{member.position}</td>
-              <td>{!isVetted ? (
-                <button onClick={handleUpdateVetting}>Passed</button>
-              ):(
-                <button onClick={handleUpdateVetting}>Failed</button>
-              )}</td>
-             
+            <MemberCard
+              key={member.id}
+              id={member.id}
+              first_name={member.firstName}
+              last_name={member.lastName}
+              email={member.email}
+              position={member.position}
+              vetted={member.vetted}
+              onDeleteMember={onDeleteMember}
+              onUpdateMember={onUpdateMember}
+            />
 
-              <button onClick={handleDeleteClick}>🗑</button> {/*<button onClick={handleUpdateClick}>✏️</button>*/}
-            </tr>
-          </tbody>  
+            
+            
+    //       <tbody key={member.id} id = {member.id}>
+    //         <tr>   
+    //           <td>{member.firstName}</td>
+    //           <td>{member.lastName}</td>
+    //           <td>{member.email}</td>
+    //           <td>{member.position}</td>
+    //           {/* <td>{!isVetted ? (
+    //             <button onClick={handleUpdateVetting}>Passed</button>
+    //           ):(
+    //             <button onClick={handleUpdateVetting}>Failed</button>
+    //           )}</td>
+    //           <button onClick={handleDeleteClick}>🗑</button> <button onClick={handleUpdateClick}>✏️</button> */}
+    //         </tr>
+    //       </tbody>  
           )})}
 
-        </table>
-    </div>
+    {/* //     </table> */}
+    {/* // </div> */}
 
     </div>
   )

@@ -33,6 +33,7 @@ import MembersList from "./MembersList";
 
   const handleDisplayMembers = members.filter((member) => {
     return member
+    
   })
 
   const handleUpdateMember = (updatedMember) => {

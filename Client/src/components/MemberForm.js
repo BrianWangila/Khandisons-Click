@@ -21,7 +21,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-function Form( { handleClose, onAddMember } ) {
+function MemberForm( { handleClose, onAddMember } ) {
 
   const classes = useStyles();
   const [firstName, setFirstName] = useState("")
@@ -41,7 +41,7 @@ function Form( { handleClose, onAddMember } ) {
       position: position
     }
 
-    fetch("http://localhost:4000/members", {
+    fetch("http://localhost:9292/members", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -98,4 +98,4 @@ function Form( { handleClose, onAddMember } ) {
   )
 }
 
-export default Form
+export default MemberForm
