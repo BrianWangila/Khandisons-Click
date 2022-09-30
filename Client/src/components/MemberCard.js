@@ -29,7 +29,7 @@ function MemberCard({ id, first_name, last_name, position, email, vetted: isVett
   }
 
   return (
-    <div>
+    <div className='App'>
       <table>
         <tbody>
           <tr>
@@ -42,7 +42,7 @@ function MemberCard({ id, first_name, last_name, position, email, vetted: isVett
             ):(
               <button onClick={handleUpdateVetting}>Fail</button>
             )}</td>
-            
+
             <td><button onClick={handleDeleteClick}>🗑</button> {/*<button onClick={handleUpdateClick}>✏️</button>*/}</td>
           </tr>
         </tbody>
