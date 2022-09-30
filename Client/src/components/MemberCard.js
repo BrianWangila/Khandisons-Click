@@ -30,20 +30,23 @@ function MemberCard({ id, first_name, last_name, position, email, vetted: isVett
 
   return (
     <div>
-          <tbody>
+      <table>
+        <tbody>
           <tr>
-          <td>{first_name}</td>
-          <td>{last_name}</td>
-          <td>{position}</td>
-          <td>{email}</td>
-          <td>{isVetted ? (
-            <button onClick={handleUpdateVetting}>Pass</button>
-          ):(
-            <button onClick={handleUpdateVetting}>Fail</button>
-          )}</td>
-          <button onClick={handleDeleteClick}>🗑</button> {/*<button onClick={handleUpdateClick}>✏️</button>*/}
+            <td>{first_name}</td>
+            <td>{last_name}</td>
+            <td>{position}</td>
+            <td>{email}</td>
+            <td>{isVetted ? (
+              <button onClick={handleUpdateVetting}>Pass</button>
+            ):(
+              <button onClick={handleUpdateVetting}>Fail</button>
+            )}</td>
+            
+            <td><button onClick={handleDeleteClick}>🗑</button> {/*<button onClick={handleUpdateClick}>✏️</button>*/}</td>
           </tr>
-          </tbody>
+        </tbody>
+      </table>
 
     </div>
   )

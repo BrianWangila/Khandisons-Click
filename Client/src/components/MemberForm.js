@@ -35,8 +35,8 @@ function MemberForm( { handleClose, onAddMember } ) {
     console.log(firstName, lastName, email, position);
 
     const addMember = {
-      first_name: firstName,
-      last_name: lastName,
+      firstName: firstName,
+      lastName: lastName,
       email: email,
       position: position
     }

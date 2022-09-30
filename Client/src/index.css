@@ -39,32 +39,43 @@ code {
 }
   
 table {
-  border: 2px solid forestgreen;
+  border: 1px solid black;
   width: 80vw;
-  min-height: 30vh;
+  min-height: 10vh;
+  
 }
 
 
-thead th {
-  padding: 2vh 3vw 0 3vw;
+table th {
+  padding: 1vh 3vw 0 3vw;
   border-bottom: 1px solid black;
+  border-top: 1px solid black;
+
 }
 
-thead tr {
+thead tr th {
   text-align: left;
-  height: 7vh;
+  font-size: 18px;
+  color: rgb(95, 129, 9);
+  /* padding-left: 20px; */
 }
 
 tbody td {
   text-align: left;
   height: 2vh;
-  padding: 2vh 3vw 2vh 3vw;
+  padding: 2vh 1vw 2vh 3vw;
   color: rgb(36, 26, 26);
+  border-bottom: 1px solid black;
 }
 
 tbody  button {
   font-size: 15px;
   margin-left: 1vw;
   border: none;
+
+}
+
+.header {
+  color: rgb(22, 190, 22);
 
 }

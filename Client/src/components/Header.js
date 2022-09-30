@@ -7,7 +7,7 @@ function Header() {
   return (
     <div>
       <div className='header'>
-        <h1>Khandisons
+        <h1>KHANDISONS
           <span className="logo" style={{fontSize: 20+"px"}}> Members Area</span>
         </h1>
       </div>

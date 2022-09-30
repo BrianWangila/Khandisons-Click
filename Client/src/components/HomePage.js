@@ -2,11 +2,13 @@ import React, { useState, useEffect } from "react";
 import { Button, Dialog } from '@material-ui/core'
 import MemberForm from "./MemberForm";
 import MembersList from "./MembersList";
+import Search from "./Search";
 
  
  function HomePage() {
   const [open, setOpen] = useState(false);
   const [members, setMembers] = useState([])
+  const [searchTerm, setSearchTerm] = useState("")
 
   useEffect(() => {
     fetch("http://localhost:9292/members")
@@ -51,6 +53,11 @@ import MembersList from "./MembersList";
         </Dialog>
 
         <div>
+          <Search searchTerm={searchTerm} onSearchChange={setSearchTerm}/>
+        </div>
+
+        <div>
+          
           <MembersList
             members={handleDisplayMembers}
             onDeleteMember={handleDelete}
